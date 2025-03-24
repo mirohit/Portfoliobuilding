@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Sagar Chavan | Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="script.js"></script> <!-- Link to JS -->
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Rohit Sagar Chavan</div>
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="dark-mode-toggle">🌙</button></li> <!-- Dark Mode Toggle -->
+        </ul>
+        <div class="hamburger">&#9776;</div> <!-- Mobile Menu -->
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <h4 id="typing-text"></h4> <!-- Typing Effect -->
+    </section>
+    
+    <!-- Typing Effect JavaScript -->
+    <script>
+        const text = "Hello, I'm Rohit Sagar Chavan, a passionate Data Analyst skilled in Data Extraction, Visualization, and Machine Learning. With expertise in Python, SQL, Power BI, Tableau, and Excel, I transform raw data into actionable insights that drive decisions.";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 10); // Adjust typing speed
+            }
+        }
+        window.onload = typeEffect;
+    </script>
+    
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate Analyst specializing in Data Extraction, Visualization, and Machine Learning Model Building. With expertise in Python, SQL, Power BI, Tableau, and Excel, I transform raw data into actionable insights.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <h4>Exploratory Data Analysis</h4>
+                <p>Analyzed Play Store data for developer insights.</p>
+                <a href="https://github.com/mirohit/Google-play-review-analysis" target="_blank">View Project</a>
+            </div>
+            <div class="project">
+                <h4>Loan Prediction Model</h4>
+                <p>Built an ML model to predict loan approvals.</p>
+                <a href="https://github.com/mirohit/Machine-Learning-Project-on-Loan-prediction" target="_blank">View Project</a>
+            </div>
+            <div class="project">
+                <h4>Google Play Dashboard</h4>
+                <p>Interactive Tableau dashboard for Play Store insights.</p>
+                <a href="https://public.tableau.com/app/profile/rohit.chavan8156/viz/GooglePlaystoreDataReviewAnalysis/Dashboard1" target="_blank">View Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="response-message"></p> <!-- Status message -->
+    </section>
+
+    <!-- JavaScript for Contact Form Submission -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent page refresh
+
+            // Get form values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const responseMessage = document.getElementById("response-message"); // Message div
+
+            if (!name || !email || !message) {
+                responseMessage.innerHTML = `<p style="color: red;">Please fill in all fields!</p>`;
+                return;
+            }
+
+            // Show loading text
+            responseMessage.innerHTML = `<p style="color: blue;">Sending...</p>`;
+
+            try {
+                // Send form data to the backend
+                const response = await fetch("http://localhost:5000/send", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    responseMessage.innerHTML = `<p style="color: green;">Message sent successfully!</p>`;
+                    document.getElementById("contact-form").reset(); // Clear form
+
+                    // Optional: Hide form after submission
+                    setTimeout(() => {
+                        document.getElementById("contact-form").style.display = "none";
+                    }, 2000); // Hide form after 2 seconds
+                } else {
+                    throw new Error(result.error || "Failed to send message.");
+                }
+            } catch (error) {
+                responseMessage.innerHTML = `<p style="color: red;">${error.message}</p>`;
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rohit Sagar Chavan. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
