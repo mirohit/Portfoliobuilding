@@ -10,17 +10,19 @@
 <body>
 
     <!-- Navigation -->
-    <nav>
-        <div class="logo">Rohit Sagar Chavan</div>
-        <ul id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button id="dark-mode-toggle">🌙</button></li> <!-- Dark Mode Toggle -->
-        </ul>
-        <div class="hamburger">&#9776;</div> <!-- Mobile Menu -->
-    </nav>
+  <!-- Navigation -->
+<nav>
+    <div class="logo">Rohit Sagar Chavan</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#education">Education</a></li> <!-- Changed to lowercase for consistency -->
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="dark-mode-toggle">🌙</button></li> <!-- Dark Mode Toggle -->
+    </ul>
+    <div class="hamburger">&#9776;</div> <!-- Mobile Menu -->
+</nav>
+
 
     <!-- Home Section -->
     <section id="home">
@@ -30,22 +32,52 @@
     
     <!-- Typing Effect JavaScript -->
     <script>
-        const text = "Hello, I'm Rohit Sagar Chavan, a passionate Data Analyst skilled in Data Extraction, Visualization, and Machine Learning. With expertise in Python, SQL, Power BI, Tableau, and Excel, I transform raw data into actionable insights that drive decisions.";
+        const text = "Hello, I'm Rohit Sagar Chavan, a dedicated and results-driven Data Analyst with a strong passion for uncovering insights from complex datasets. My expertise lies in Data Extraction, Visualization, and Machine Learning, enabling me to transform raw data into meaningful, data-driven decisions.With a strong command over Python, SQL, Power BI, Tableau, and Excel, I specialize in: ✔ Extracting and processing large datasets efficiently ✔ Creating compelling data visualizations that drive business strategies ✔ Building automation solutions to streamline workflows ✔ Implementing machine learning models to predict trends and patterns. I thrive on solving analytical challenges and leveraging data to drive impactful business outcomes. Let's explore the power of data together! 🚀";
         let index = 0;
         function typeEffect() {
             if (index < text.length) {
                 document.getElementById("typing-text").innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeEffect, 10); // Adjust typing speed
+                setTimeout(typeEffect, 02); // Adjust typing speed
             }
         }
         window.onload = typeEffect;
+
+        // Dark Mode Toggle Functionality
+        document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            document.querySelector("nav").classList.toggle("dark-mode");
+        });
+
+        // Mobile Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
     </script>
-    
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate Analyst specializing in Data Extraction, Visualization, and Machine Learning Model Building. With expertise in Python, SQL, Power BI, Tableau, and Excel, I transform raw data into actionable insights.</p>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-item">
+                <h4>B.Sc in Bioanalytical Sciences</h4>
+                <p><strong><a href="https://gnkhalsa.edu.in/" target="_blank">Guru Nanak Khalsa College, Matunga</a></strong></p>
+                <p>2020 – 2023 | Mumbai, India</p>
+                <p><strong>CGPA:</strong> 8.00</p>
+            </div>
+            <div class="education-item">
+                <h4>HSC</h4>
+                <p><strong><a href="https://mdcollege.in/" target="_blank">Maharshi Dayanand Mahavidyalaya, Parel</a></strong></p>
+                <p>2019 – 2020 | Mumbai, India</p>
+                <p><strong>Percentage:</strong> 58.30%</p>
+            </div>
+            <div class="education-item">
+                <h4>SSC</h4>
+                <p><strong><a href="https://www.ies.edu/dpv/" target="_blank">IES Digambar Patkar Vidyalaya, Dadar</a></strong></p>
+                <p>2017 – 2018 | Mumbai, India</p>
+                <p><strong>Percentage:</strong> 77.00%</p>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -54,21 +86,66 @@
         <div class="project-container">
             <div class="project">
                 <h4>Exploratory Data Analysis</h4>
-                <p>Analyzed Play Store data for developer insights.</p>
+                <p>
+                    • Analyzed Play Store data for developer insights.<br><br>
+                    • Our project revolves around demystifying the Play Store data puzzle to empower app developers in the Android realm.<br><br>
+                    • The main goal is to sift through app details and user reviews, distilling insights that can guide developers towards making smarter decisions for better user engagement.
+                </p>
                 <a href="https://github.com/mirohit/Google-play-review-analysis" target="_blank">View Project</a>
             </div>
             <div class="project">
                 <h4>Loan Prediction Model</h4>
-                <p>Built an ML model to predict loan approvals.</p>
+                <p>
+                    • In this project, with the help of Machine Learning techniques, we were able to determine the best technique.<br><br>
+                    • The goal was to identify which technique provides the best accuracy in the model for loan prediction.
+                </p>
                 <a href="https://github.com/mirohit/Machine-Learning-Project-on-Loan-prediction" target="_blank">View Project</a>
             </div>
             <div class="project">
                 <h4>Google Play Dashboard</h4>
-                <p>Interactive Tableau dashboard for Play Store insights.</p>
+                <p>
+                    • Our venture revolves around demystifying the Play Store data to enable app developers within the Android domain.<br><br>
+                    • The main objective is to sift through app details and user reviews, refining insights that can guide developers towards making smarter decisions for better user engagement.
+                </p>
+                
                 <a href="https://public.tableau.com/app/profile/rohit.chavan8156/viz/GooglePlaystoreDataReviewAnalysis/Dashboard1" target="_blank">View Dashboard</a>
             </div>
         </div>
     </section>
+
+<!-- Experience Section -->
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-container">
+        <div class="experience-item">
+            <h4>Data Analyst | <a href="https://www.mdlindia.co.in/" target="_blank"> Meterology Data pvt.ltd </a> Mumbai, India</h4>
+            <p><strong>Duration:</strong> June 2023 - Present</p>
+
+            <p><strong>: Responsibilities :</strong> <br><br>
+                • Conducted data analysis, Create Automation and generated reports through it <br><br>
+                • worked on data visualization using Tableau and Power BI to support business decisions <br><br>
+                • Collaboration and Communication, Reports Management
+            </p>
+        </div>
+        <div class="experience-item">
+            <h4>Data Science Trainer | <a href="https://www.develearn.in/" target="_blank"> Develearn Technologies</a> Mumbai, India</h4>
+            <p><strong>Duration:</strong> Feb 2024 - December 2024 </p>
+
+            <p><strong>: Responsibilities :</strong> <br><br>
+                • worked on python, SQL, Advance Excel, Power BI and Tableau <br><br>
+                • performed data cleaning and preprocessing tasks and provided insights.</p>
+        </div>
+        <div class="experience-item">
+            <h4>Research Analyst | <a href="https://nanghavi.com/" target="_blank">Nanghavi Chromatography Solutions Pvt. Ltd.</a> Mumbai, India</h4>
+            <p><strong>Duration:</strong> Apr 2022 - Jul 2022</p>
+            <p><strong>: Responsibilities :</strong><br><br>
+                • Documentation and report analysis<br><br>
+                • learned to make review articles
+            </p>
+        </div>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -127,11 +204,9 @@
             }
         });
     </script>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Rohit Sagar Chavan. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
