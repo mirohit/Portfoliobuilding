@@ -105,7 +105,7 @@ section {
 /* Home Section */
 #home {
     background-color: #222;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 150px 50px;
 }
 
@@ -169,7 +169,7 @@ section {
 /* Text Styling */
 .education-item h4 {
     font-size: 1.4rem;
-    color: #007bff;
+    color: #1385ff;
     margin-bottom: 10px;
 }
 
@@ -302,6 +302,102 @@ section {
 #contact {
     background-color: #e0e0e0;
     padding: 80px 20px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+#contact.dark-mode {
+    background-color: #444;
+    color: white;
+}
+
+#contact h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+#contact.dark-mode h2 {
+    color: #ffcc00;
+}
+
+.contact-info {
+    max-width: 703px;
+    margin: auto;
+    text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-info strong {
+    color: #007bff;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+#contact.dark-mode .contact-info {
+    background: #555;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+#contact.dark-mode .contact-info p {
+    color: white;
+}
+
+#contact.dark-mode .contact-info strong {
+    color: #ffcc00;
+}
+
+#contact.dark-mode .contact-info a {
+    color: #ffcc00;
+}
+
+#contact.dark-mode .contact-info a:hover {
+    color: #ff6600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Feedback Section */
+#contact {
+    background-color: #e0e0e0;
+    padding: 80px 20px;
 }
 
 #contact.dark-mode {
@@ -349,7 +445,7 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 01px;
 }
 
 footer.dark-mode {
