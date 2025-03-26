@@ -241,6 +241,72 @@ section {
     color: #333;
 }
 
+#skills {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.skills-container {
+    max-width: 710px;
+    margin: auto;
+    text-align: left;
+    background: rgb(233, 229, 229);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for skills container */
+.skills-container:hover {
+    transform: scale(1.02);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#skills h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills ul li {
+    font-size: 1.1rem;
+    color: #272626;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover effect for each skill item */
+#skills ul li:hover {
+    color: #ff6600;
+    transform: translateX(5px);
+    font-weight: bold;
+}
+
+/* Checkmark style */
+#skills ul li::before {
+    content: "✔";  /* Checkmark bullet point */
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Change checkmark color on hover */
+#skills ul li:hover::before {
+    color: #ff6600;
+}
+
 /* Experience Section */
 #experience {
     background-color: #f4f4f4;
@@ -248,7 +314,7 @@ section {
 }
 
 #experience h2 {
-    font-size: 2rem;
+    font-size: 2.0rem;
     margin-bottom: 20px;
 }
 
