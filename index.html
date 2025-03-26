@@ -185,16 +185,42 @@
 
 
     <!-- Feedback Section -->
-    <section id="feedback">
-        <h2>: Feedback :</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="response-message"></p> <!-- Status message -->
-    </section>
+ <!-- Feedback Section -->
+<section id="feedback">
+    <h2>: Feedback :</h2>
+    <form id="contact-form" action="https://formspree.io/f/xwplqdva" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <p id="response-message"></p>
+</section>
+
+<!-- JavaScript for Form Submission (Optional) -->
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const responseMessage = document.getElementById("response-message");
+        responseMessage.innerHTML = `<p style="color: blue;">Sending...</p>`;
+
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                responseMessage.innerHTML = `<p style="color: green;">Message sent successfully!</p>`;
+                form.reset();
+            } else {
+                responseMessage.innerHTML = `<p style="color: red;">Something went wrong. Please try again.</p>`;
+            }
+        }).catch(error => {
+            responseMessage.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+        });
+    });
+</script>
 
     <!-- JavaScript for Contact Form Submission -->
     <script>
