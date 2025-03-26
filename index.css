@@ -14,6 +14,19 @@ body.dark-mode {
     color: white;
 }
 
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #fff;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
 /* Navigation */
 nav {
     display: flex;
@@ -104,8 +117,8 @@ section {
 
 /* Home Section */
 #home {
-    background-color: #222;
-    color: rgb(255, 255, 255);
+    background-color: #383737;
+    color: rgb(228, 214, 12);
     padding: 150px 50px;
 }
 
@@ -131,7 +144,7 @@ section {
 #education {
     text-align: center;
     padding: 50px;
-    background-color: #f9f9f9;
+    background-color: #f8e9a8;
 }
 
 #education h2 {
@@ -200,7 +213,7 @@ section {
 }
 
 .project {
-    background: white;
+    background: rgb(228, 226, 226);
     width: 30%;
     padding: 20px;
     border-radius: 10px;
@@ -211,7 +224,7 @@ section {
 
 .project.dark-mode {
     background: #444;
-    color: white;
+    color: rgb(53, 53, 53);
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
 }
 
@@ -242,7 +255,7 @@ section {
 }
 
 #skills {
-    background-color: #f8f9fa;
+    background-color: #f8e9a8;
     padding: 60px 20px;
     text-align: center;
 }
@@ -309,7 +322,7 @@ section {
 
 /* Experience Section */
 #experience {
-    background-color: #f4f4f4;
+    background-color: #e6e9ec;
     padding: 80px 20px;
 }
 
@@ -366,7 +379,7 @@ section {
 
 /* Contact Section */
 #contact {
-    background-color: #e0e0e0;
+    background-color: #e1dbdb;
     padding: 80px 20px;
     text-align: center;
     transition: background 0.3s, color 0.3s;
@@ -462,7 +475,7 @@ section {
 
 /* Feedback Section */
 #contact {
-    background-color: #e0e0e0;
+    background-color: #f9e6b4;
     padding: 80px 20px;
 }
 
@@ -508,7 +521,7 @@ section {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #272626;
     color: white;
     text-align: center;
     padding: 01px;
