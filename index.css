@@ -26,6 +26,20 @@ body.dark-mode {
     50% { opacity: 0; }
 }
 
+.profile-pic {
+    width: 200px; /* Adjust size */
+    height: 200px;
+    border-radius: 1%; /* Makes it circular */
+    border: 2px solid #f7f7f7; /* Optional border */
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 1px auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
 
 /* Navigation */
 nav {
